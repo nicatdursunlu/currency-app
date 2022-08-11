@@ -1,5 +1,6 @@
 import React from 'react'
-import { AppBar, Toolbar, Box, Typography, Button } from '@material-ui/core'
+import { AppBar, Toolbar, Box, Typography } from '@material-ui/core'
+import { NavLink } from 'react-router-dom'
 
 export const AppHeader: React.FC = () => {
   return (
@@ -10,16 +11,17 @@ export const AppHeader: React.FC = () => {
             <Typography variant="h5">Currency App</Typography>
           </Box>
           <Box display="flex" alignItems="center">
-            <Button color="inherit" variant="text" href="/">
+            <NavLink activeClassName="activeLink" className="link" exact to="/">
               Home
-            </Button>
-            <Button
-              style={{ marginLeft: 12 }}
-              color="inherit"
-              href="/exchange-rates"
+            </NavLink>
+            <NavLink
+              activeClassName="activeLink"
+              className="link"
+              to="/exchange-rates"
+              exact
             >
               Exchange Rates
-            </Button>
+            </NavLink>
           </Box>
         </Box>
       </Toolbar>
